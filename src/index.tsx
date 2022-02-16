@@ -1,12 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-import Comments from './pages/comments';
+import Posts from './home/posts';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Comments />
+    <App />
   </React.StrictMode>,
   document.getElementById('root')
 );
-

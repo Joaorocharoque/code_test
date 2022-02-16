@@ -8,11 +8,14 @@ export const h1Style = {
   color: ' #fff',
   display: 'flex',
   align: 'center',
-  margin: '15px '
+  margin: '30px '
 };
 
 export const Nav = styled.nav`
   background: #000;
+  margin-top: -10px;
+  width: 1000px;
+  margin-left: -10px;
   height: 80px;
   display: flex;
   justify-content: space-between;
@@ -25,6 +28,7 @@ export const Nav = styled.nav`
 export const NavLink = styled(Link)`
   color: #fff;
   display: flex;
+  font-size: 30px;
   align-items: center;
   text-decoration: none;
   padding: 0 1rem;

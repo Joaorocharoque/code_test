@@ -1,38 +1,21 @@
-import React from 'react';
+import React,{ Component} from 'react'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Comments from './home/comments';
+import Posts from './home/posts';
+import Navbar from './Navbar';
+import './App.css'
 
-class App extends React.Component {
-    state = {
-        id: []
-    };
-
-    componentDidMount() {
-        fetch('https://jsonplaceholder.typicode.com/posts')
-            .then(res => res.json())
-            .then(res => {
-                this.setState({
-                    id: res
-                });
-            });
-    }
-
-    render() {
-        return (
-            <div>
-                <h1>Lista de Posts</h1>
-
-                <ul>
-                    {this.state.id.map(item => (
-                        <li key={item.userId}>
-                            <h1>Posts</h1>
-                            <p><b>Id:</b> {item.id}</p>
-                            <p><b>Titulo:</b> {item.title}</p>
-                            <p><b>Body:</b> {item.body}</p>
-                        </li>
-                    ))}
-                </ul>
-            </div>
-        );
-    }
-}
-
+function App(){
+  
+    return (
+      <Router>
+      <Navbar />
+        <Routes>
+        <Route path="/" element={<Posts />} />
+        <Route path="/Comments" element={<Comments />} />
+     
+      </Routes>
+  </Router>
+    )
+  }
   export default App;
